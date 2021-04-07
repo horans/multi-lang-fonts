@@ -1,6 +1,6 @@
 # Multiligual Fonts Switch
 
-Switch to certain font face when page language is changed.
+Switch to corresponding font family when page language is changed.
 
 ## Sample
 
