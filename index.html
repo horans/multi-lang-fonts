@@ -9,7 +9,7 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+JP&family=Noto+Sans+KR&family=Noto+Sans+SC&family=Tajawal&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+JP&family=Noto+Sans+KR&family=Noto+Sans+SC&family=Noto+Sans+TC&family=Tajawal&display=swap"
       rel="stylesheet"
     />
 
@@ -24,8 +24,11 @@
         font-family: 'Inter', var(--bs-font-sans-serif);
         /* system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' */
       }
-      [lang='zh'] body {
+      [lang='zh-Hans'] body {
         font-family: 'Noto Sans SC', var(--bs-font-sans-serif);
+      }
+      [lang='zh-Hant'] body {
+        font-family: 'Noto Sans TC', var(--bs-font-sans-serif);
       }
       [lang='ja'] body {
         font-family: 'Noto Sans JP', var(--bs-font-sans-serif);
@@ -36,6 +39,10 @@
       [lang='ar'] body {
         font-family: 'Tajawal', var(--bs-font-sans-serif);
       }
+      small {
+        color: var(--bs-gray);
+        font-size: .75rem;
+      }
     </style>
   </head>
   <body>
@@ -45,7 +52,7 @@
     *  description: switch font when language changes    *
     *  author: horans@gmail.com                          *
     *  url: https://github.com/horans/multi-lang-fonts   *
-    *  update: 210407                                    *
+    *  update: 210408                                    *
     *****************************************************/
     -->
     <header class="my-4">
@@ -63,18 +70,32 @@
             value="en"
             checked
           />
-          <label class="form-check-label" for="lang-en">English - Inter</label>
+          <label class="form-check-label" for="lang-en"
+            >English <small>(en) Inter</small></label
+          >
         </div>
         <div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="radio"
             name="lang"
-            id="lang-zh"
-            value="zh"
+            id="lang-zh-Hans"
+            value="zh-Hans"
           />
-          <label class="form-check-label" for="lang-zh"
-            >简体中文 - Noto Sans SC</label
+          <label class="form-check-label" for="lang-zh-Hans"
+            >简体中文 <small>(zh-Hans) Noto Sans SC</small></label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="lang"
+            id="lang-zh-Hant"
+            value="zh-Hant"
+          />
+          <label class="form-check-label" for="lang-zh-Hant"
+            >正体中文 <small>(zh-Hant) Noto Sans TC</small></label
           >
         </div>
         <div class="form-check form-check-inline">
@@ -86,7 +107,7 @@
             value="ja"
           />
           <label class="form-check-label" for="lang-ja"
-            >日本語 - Noto Sans JP</label
+            >日本語 <small>(ja) Noto Sans JP</small></label
           >
         </div>
         <div class="form-check form-check-inline">
@@ -98,7 +119,7 @@
             value="ko"
           />
           <label class="form-check-label" for="lang-ko"
-            >한국어 - Noto Sans KR</label
+            >한국어 <small>(ko) Noto Sans KR</small></label
           >
         </div>
         <div class="form-check form-check-inline">
@@ -109,12 +130,15 @@
             id="lang-ar"
             value="ar"
           />
-          <label class="form-check-label" for="lang-ar">عربى - Tajawal</label>
+          <label class="form-check-label" for="lang-ar"
+            >عربى <small>(ar) Tajawal</small></label
+          >
         </div>
       </form>
       <ul class="mt-4">
         <li>Almost before we knew it, we had left the ground.</li>
         <li>他们所有的设备和仪器彷佛都是有生命的。</li>
+        <li>他們所有的設備和儀器彷彿都是有生命的。</li>
         <li>彼らの機器や装置はすべて生命体だ。</li>
         <li>그들의 장비와 기구는 모두 살아 있다.</li>
         <li>الحب سماء لا تمطر غير الأحلام.</li>
